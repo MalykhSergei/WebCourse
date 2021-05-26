@@ -5,6 +5,50 @@
     <title></title>
 </head>
 <body>
+    <form action="/test.php" method="get">
+        <div>
+            <label>
+                Имя<input name="clientFirstName" type="text" placeholder="Введите имя" />
+            </label>
 
+            <label>
+                Фамилия<input name="clientLastName" type="text" placeholder="Введите фамилию" />
+            </label>
+        </div>
+        <div>
+            <label>
+                Пол<input checked="checked" name="gender" value="1" type="radio" /> Мужской
+            </label>
+
+            <label>
+                <input name="gender" value="2" type="radio" /> Женский
+            </label>
+        </div>
+        <div>
+            <label>
+                Выберите факультет
+                <select multiple="multiple" name="faculties">
+                    <option value="1">Прикладная математика</option>
+                    <option value="2">Юриспруденция</option>
+                    <option value="3">Маркетинг</option>
+                    <option value="4">Психология</option>
+                    <option value="5">Вычислительные машины</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>
+                Коротко о себе
+                <textarea name="hobby" cols="45" rows="5" placeholder="Почему выбрали нас, интересы, хобби..."></textarea>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input name="personalData" type="checkbox" /> Согласие на обработку персональных данных
+            </label>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
 </body>
 </html>
