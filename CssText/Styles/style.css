@@ -1,0 +1,40 @@
+﻿.page_content {
+    box-sizing: border-box;
+    background-color: #feeed6;
+    color: #676565;
+    max-width: 850px;
+    font-family: Arial, serif;
+    font-size: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.header {
+    font-family: Arial, serif;
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+
+.course_information {
+    margin-top: 12px;
+    font-size: 19px;
+}
+
+.paragraph {
+    margin-top: 12px;
+    font-size: 17px;
+    text-indent: 18px;
+    line-height: 1.4;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.line_through {
+    text-decoration: line-through;
+}
+
+.blue_text {
+    color: #378db2;
+    font-weight: bold;
+}
