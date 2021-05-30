@@ -1,0 +1,29 @@
+﻿.table {
+    border-collapse: collapse;
+    width: 860px;
+    height: 310px;
+    margin: 220px 105px;
+    padding-left: 10px;
+    font-size: 16pt;
+    border: 2px solid #CCCCCC;
+    padding-left: 12px;
+}
+
+.table_header {
+    background-color: #3498DB;
+    height: 50px;
+    vertical-align: middle;
+    font-family: Arial;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 16pt;
+}
+
+.cell_gray {
+    background-color: #EEEEEE;
+}
+
+.table tr td {
+    border: 2px solid #CCCCCC;
+    padding-left: 12px;
+}
