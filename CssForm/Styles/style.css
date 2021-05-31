@@ -1,0 +1,30 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.page_content {
+    width: 845px;
+    background-color: #FEEED6;
+    margin: 105px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.input_label {
+    font-weight: 500;
+    font-size: 16px;
+    font-family: Arial, serif;
+    padding-top: 20px;
+}
+
+.input_text {
+    width: 805px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.page_content textarea {
+    width: 805px;
+    height: 130px;
+}
