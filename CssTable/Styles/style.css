@@ -1,29 +1,37 @@
 ﻿.table {
     border-collapse: collapse;
-    width: 860px;
+    box-sizing: border-box;
+    max-width: 860px;
     height: 310px;
     margin: 220px 105px;
-    padding-left: 10px;
-    font-size: 16pt;
-    border: 2px solid #CCCCCC;
-    padding-left: 12px;
-}
-
-.table_header {
-    background-color: #3498DB;
-    height: 50px;
-    vertical-align: middle;
     font-family: Arial;
-    font-weight: 600;
-    color: #FFFFFF;
-    font-size: 16pt;
+    font-size: 21px;
 }
 
-.cell_gray {
-    background-color: #EEEEEE;
+    .table tr, .table td, .table th {
+        border: 2px solid #CCCCCC;
+        padding-left: 12px;
+        text-align: left;
+    }
+
+    .table thead tr {
+        background-color: #3498DB;
+        color: #eeeeee;
+        height: 50px;
+    }
+
+    .table tbody > tr:nth-child(odd) {
+        background-color: #EEEEEE;
+    }
+
+.first_name_column, .last_name_column {
+    width: 175px;
 }
 
-.table tr td {
-    border: 2px solid #CCCCCC;
-    padding-left: 12px;
+.job_column {
+    width: 310px;
+}
+
+.twitter_column {
+    width: 210px;
 }
