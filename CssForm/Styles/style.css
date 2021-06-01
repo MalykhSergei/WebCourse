@@ -2,29 +2,58 @@
     box-sizing: border-box;
 }
 
-.page_content {
-    width: 845px;
+.form_content {
+    max-width: 845px;
+    /*    min-height: 530px;*/
     background-color: #FEEED6;
-    margin: 105px;
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 20px;
+    position: relative;
+    margin-left: 30px;
+}
+
+.form_control {
+    width: 805px;
+    margin-top: 10px;
+    height: 40px;
+    border: none;
+    padding-left: 15px;
 }
 
 .input_label {
-    font-weight: 500;
-    font-size: 16px;
+    display: inline-block;
     font-family: Arial, serif;
-    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
-.input_text {
-    width: 805px;
-    height: 30px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-}
-
-.page_content textarea {
-    width: 805px;
+.form_control.textarea {
     height: 130px;
+    resize: vertical;
+}
+
+.button {
+    width: 170px;
+    height: 31px;
+    background-color: #378DB2;
+    color: #faf3ee;
+    border-width: 0;
+    font-size: 18px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+
+.header {
+    font-family: Arial, serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 31px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+}
+
+.input_label.comment {
+    margin-bottom: 70px;
 }
