@@ -2,58 +2,78 @@
     box-sizing: border-box;
 }
 
-.form_content {
-    max-width: 845px;
-    /*    min-height: 530px;*/
-    background-color: #FEEED6;
-    padding-left: 20px;
-    position: relative;
-    margin-left: 30px;
-}
-
-.form_control {
-    width: 805px;
-    margin-top: 10px;
-    height: 40px;
-    border: none;
-    padding-left: 15px;
-}
-
-.input_label {
-    display: inline-block;
-    font-family: Arial, serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 20px;
-}
-
-.form_control.textarea {
-    height: 130px;
-    resize: vertical;
-}
-
-.button {
-    width: 170px;
-    height: 31px;
-    background-color: #378DB2;
-    color: #faf3ee;
-    border-width: 0;
-    font-size: 18px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
-}
-
 .header {
-    font-family: Arial, serif;
-    font-weight: 400;
-    margin-bottom: 5px;
+    display: block;
+    font-weight: normal;
     font-size: 31px;
-    margin-bottom: 4px;
-    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 5px;
+    margin-left: 15px;
 }
 
-.input_label.comment {
-    margin-bottom: 70px;
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+
+.form {
+    padding: 20px;
+    max-width: 845px;
+    width: 100%;
+    height: 100%;
+    background-color: #feeed6;
+}
+
+.form_label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form_text {
+    min-height: 40px;
+    max-width: 805px;
+    height: 100%;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 17px;
+    padding-left: 15px;
+    border: none;
+}
+
+.form_textarea {
+    min-height: 130px;
+    max-width: 805px;
+    height: 100%;
+    width: 100%;
+    resize: vertical;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+    border: none;
+}
+
+.form_button {
+    display: block;
+    min-height: 35px;
+    max-width: 170px;
+    height: 100%;
+    width: 100%;
+    margin-left: auto;
+    background-color: #378db2;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    border: none;
+}
+
+.form_help_label {
+    display: block;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #737373;
+    margin-bottom: 20px;
 }
