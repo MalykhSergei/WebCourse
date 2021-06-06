@@ -31,8 +31,7 @@
             return item % 2 === 0;
         }).reduce(function (sum, currentItem) {
             return sum + currentItem;
-        },
-            0);
+        }, 0);
     }
 
     console.log("Сумма элементов массива, которые являются четными числами: " + getEvenNumbersSum(array));
@@ -49,13 +48,13 @@
 
     console.log("Массив чисел от 1 до 100: " + getArray(1, 100));
 
-    function getSquares(array) {
-        return array.filter(function (evenNumbers) {
-            return evenNumbers % 2 === 0;
+    function getEvenNumbersSquaresArray(array) {
+        return array.filter(function (item) {
+            return item % 2 === 0;
         }).map(function (currentValue) {
             return currentValue * currentValue;
         });
     }
 
-    console.log("Список квадратов четных чисел: " + getSquares(getArray(1, 100)));
+    console.log("Список квадратов четных чисел: " + getEvenNumbersSquaresArray(getArray(1, 100)));
 })()
