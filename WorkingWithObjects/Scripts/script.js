@@ -26,13 +26,17 @@
                     name: "Berlin",
                     population: 3644826
                 },
-                //{
-                //    name: "Munich",
-                //    population: 1471508
-                //},
+                {
+                    name: "Munich",
+                    population: 1471508
+                },
                 {
                     name: "Stuttgart",
                     population: 634830
+                },
+                {
+                    name: "Hannover",
+                    population: 537000
                 }
             ]
         },
@@ -43,10 +47,6 @@
                     name: "Innsbruck",
                     population: 131961
                 },
-                //{
-                //    name: "Salzburg",
-                //    population: 156872
-                //},
                 {
                     name: "Vienna",
                     population: 1897491
@@ -72,20 +72,33 @@
         }
     ];
 
-    function getMaxCitiesCount(countries) {
-        return countries.reduce(function (max, currentCountry) {
-            return Math.max(max, currentCountry.cities.length);
+    function getCountryWithMaxCities(countries) {
+        var maxCitiesCount = countries.reduce(function (max, currentValue) {
+            return Math.max(max, currentValue.cities.length);
         }, 0);
-    }
 
-    function getCountryWithMaxCitiesCount(countries) {
-        var maxCitiesInCountryCount = getMaxCitiesCount(countries);
+        var maxCitiesInCountryCount = countries.filter(function (country) {
+            return country.cities.length === maxCitiesCount;
+        });
 
-        return countries.filter(function (country) {
-            return country.cities.length === maxCitiesInCountryCount;
+        return maxCitiesInCountryCount.map(function (country) {
+            return country.name;
         });
     }
 
-    console.log("Страны с максимальным количеством городов:");
-    console.log(getCountryWithMaxCitiesCount(countries));
+    console.log("Страны с максимальным количеством городов: " + getCountryWithMaxCities(countries));
+
+    function getCountriesPopulation(countries) {
+        var countriesPopulation = {};
+
+        countries.forEach(function (country) {
+            countriesPopulation[country.name] = country.cities.reduce(function (sum, currentValue) {
+                return sum + currentValue.population;
+            }, 0);
+        });
+
+        return countriesPopulation;
+    }
+
+    console.log(getCountriesPopulation(countries));
 })();
