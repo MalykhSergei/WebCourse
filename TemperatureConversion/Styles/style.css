@@ -1,0 +1,51 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 10px;
+    color: #a0522d;
+}
+
+.content {
+    max-width: 350px;
+    width: 100%;
+    background-color: #a3a3a2;
+    font-size: 20px;
+    font-family: sans-serif, Arial;
+    padding: 15px;
+}
+
+.content_text {
+    width: 100%;
+    margin-top: 15px;
+    /*margin-bottom: 60px;*/
+}
+
+.content_label {
+    margin-bottom: 20px;
+}
+
+.result_kelvin_label {
+    margin-left: 10px;
+}
+
+.content_button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: #0000ff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+::-webkit-input-placeholder {
+    font-size: 16px;
+    padding: 10px 5px;
+}
