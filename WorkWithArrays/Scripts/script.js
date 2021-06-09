@@ -1,15 +1,12 @@
 ﻿(function () {
-
     "use strict";
 
     var array = [3, 2, 1, 5, 8, -2, 0, 6, 12, 9, 5, 7, 1, -4, -1, -8];
 
     function sortByDescending(array) {
-        var sortedArray = array.sort(function (e1, e2) {
+        return array.sort(function (e1, e2) {
             return e2 - e1;
         });
-
-        return sortedArray;
     }
 
     console.log("Отсортированный массив по убыванию: " + sortByDescending(array));
@@ -26,8 +23,8 @@
 
     console.log("Подмассив из последних 5 элементов: " + getLastArrayItems(array));
 
-    function getEvenNumbersSum(array2) {
-        return array2.filter(function (item) {
+    function getEvenNumbersSum(array) {
+        return array.filter(function (item) {
             return item % 2 === 0;
         }).reduce(function (sum, currentItem) {
             return sum + currentItem;
@@ -57,4 +54,4 @@
     }
 
     console.log("Список квадратов четных чисел: " + getEvenNumbersSquaresArray(getArray(1, 100)));
-})()
+})();
