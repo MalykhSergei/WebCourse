@@ -9,25 +9,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Temperature conversion</h1>
+        <h1 class="header">Temperature conversion</h1>
         <div class="content">
             <div>
                 <label>
                     Temperature value:
-                    <input id="input_text" class="content_text" type="text" name="text" placeholder="Enter the temperature" />
+                    <input id="celsius_textfield" class="content_text" type="text" name="enter_text" placeholder="Enter the temperature" />
                 </label>
             </div>
-            <div class="content_label">
-                <label name="kelvin_label">Temperature in Kelvin:</label>
-                <label id="output_kelvin" name="output_kelvin"></label>
-            </div>
-            <div class="content_label">
-                <label name="fahrenheit_label">Temperature in Fahrenheit: </label>
-                <label name="output_fahrenheit"></label>
-            </div>
+
             <div>
-                <button id="content_button" type="content_button">Convert</button>
+                <button class="content_button" id="content_button" type="content_button">Convert</button>
             </div>
+
+            <div class="message_block"></div>
         </div>
     </div>
 </body>
