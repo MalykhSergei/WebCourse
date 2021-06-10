@@ -5,16 +5,21 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 20px;
+    font-weight: normal;
+    color: #a0522d;
 }
 
 .header {
     font-size: 31px;
+    margin: 7px 15px;
+    color: #343e46;
+    font-family: serif, Arial;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 550px;
+    width: 100%;
     margin: 10px;
-    color: #a0522d;
 }
 
 .content {
@@ -23,22 +28,28 @@ body {
     border-radius: 10px;
 }
 
-.content_text {
+.input_value {
     width: 100%;
     margin: 15px 0;
     border: none;
 }
 
 .content_button {
-    /* display: block;*/
+    display: block;
     margin-left: auto;
+    margin-bottom: 50px;
+    padding: 5px 10px;
     color: #a0522d;
+    cursor: pointer;
 }
 
-.error_message {
-    color: #f00;
-    margin-top: 30px;
-    font-size: 15px;
+    .content_button:hover {
+        background-color: #b3b5a6;
+    }
+
+.output_value {
+    line-height: 2;
+    color: #343e46;
 }
 
 ::-webkit-input-placeholder {

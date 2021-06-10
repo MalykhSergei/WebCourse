@@ -8,22 +8,36 @@
     <script defer src="Scripts/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="header">Temperature conversion</h1>
-        <div class="content">
-            <div>
-                <label>
-                    Temperature value:
-                    <input id="celsius_textfield" class="content_text" type="text" name="enter_text" placeholder="Enter the temperature" />
-                </label>
-            </div>
+<div class="container">
+    <h1 class="header">Temperature conversion</h1>
+    <div class="content">
+        <div>
+            <label>
+                Temperature in Celsius:
+                <input id="celsius_textfield" class="input_value" type="text" name="enter_text" placeholder="Enter the temperature" />
+            </label>
+        </div>
 
-            <div>
-                <button class="content_button" id="content_button" type="content_button">Convert</button>
-            </div>
+        <div>
+            <button class="content_button" id="content_button" type="button">Convert</button>
+        </div>
 
-            <div class="message_block"></div>
+        <div>
+            <label>
+                Temperature in Kelvin:
+                <span id="output_kelvin" class="output_value"></span>
+            </label>
+
+        </div>
+
+        <div>
+            <label>
+                Temperature in Fahrenheit:
+                <span id="output_fahrenheit" class="output_value"></span>
+            </label>
+
         </div>
     </div>
+</div>
 </body>
 </html>

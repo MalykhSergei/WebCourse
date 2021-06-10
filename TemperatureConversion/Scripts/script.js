@@ -3,20 +3,25 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     var celsiusTextfield = document.getElementById("celsius_textfield");
-    var message = document.querySelector(".message_block");
+
+    var outputKelvin = document.getElementById("output_kelvin");
+    var outputFahrenheit = document.getElementById("output_fahrenheit");
 
     document.getElementById("content_button").addEventListener("click", function () {
-        var text = celsiusTextfield.value;
 
-        if (text === "" || isNaN(text)) {
-            message.textContent = "Please enter the number";
-            message.classList.add("error_message");
+        var inputText = celsiusTextfield.value;
 
+        console.log(inputText);
+
+        if (inputText === "" || isNaN(inputText)) {
+
+            outputKelvin.textContent = "";
+            outputFahrenheit.textContent = "";
+            alert("Please enter the number!");
             return;
         }
 
-        message.textContent = "";
-        message.classList.remove("error_message");
+        celsiusTextfield.textContent = "";
 
         function convertToKelvin(value) {
             return parseFloat(value) + 273.15;
@@ -26,11 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return (parseFloat(value) * 9 / 5) + 32;
         }
 
-        message.textContent = "Kelvin" + " =" + convertToKelvin(text);
-
-        outputKelvin.textContent = convertToKelvin(text).toFixed(2);
-        outputFahrenheit.textContent = convertToFahrenheit(text).toFixed(2);
-
-        celsiusTextfield.textContent = "";
+        outputKelvin.textContent = convertToKelvin(inputText).toFixed(2);
+        outputFahrenheit.textContent = convertToFahrenheit(inputText).toFixed(2);
     });
 });
