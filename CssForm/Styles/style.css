@@ -5,8 +5,6 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
-    color: #676565;
-    font-weight: 700;
 }
 
 .header {
@@ -26,6 +24,11 @@ body {
 .form {
     padding: 20px;
     background-color: #feeed6;
+}
+
+.subtitle {
+    color: #676565;
+    font-weight: 700;
 }
 
 .form_text {
@@ -50,7 +53,7 @@ body {
     padding: 10px 15px;
     margin-left: auto;
     background-color: #378db2;
-    color: #ffffff;
+    color: #fff;
     font-weight: 700;
     border: none;
     cursor: pointer;
@@ -64,5 +67,4 @@ body {
     display: block;
     color: #737373;
     margin-bottom: 20px;
-    font-weight: normal;
 }
