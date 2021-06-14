@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
         function setViewMode() {
             listItem.innerHTML =
                 "<span class=\"text_span\"></span>" +
-                "<button class=\"edit_button\" type=\"button\">Edit</button>" +
-                "<button class=\"delete_button\" type=\"button\">Delete</button>";
+                "<button class=\"edit_button\" type=\"button\" name=\"edit_button\">Edit</button>" +
+                "<button class=\"delete_button\" type=\"button\" name=\"delete_button\">Delete</button>";
 
             listItem.querySelector(".text_span").textContent = text;
 
