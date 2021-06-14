@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿"use strict";
+
+$(document).ready(function () {
     var textField = $("#text_field");
     var list = $("#list");
     var errorMessage = $("#error_message");
@@ -56,5 +58,6 @@
         list.append(listItem);
 
         textField.val("");
+        errorMessage.text("");
     });
 });
