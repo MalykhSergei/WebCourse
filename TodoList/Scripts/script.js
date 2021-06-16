@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             listItem.querySelector(".edit_button").addEventListener("click", function () {
+                if (document.getElementsByClassName("edit_text").length !== 0) {
+                    window.document.querySelector(".cancel_button").click();
+                }
+
                 listItem.innerHTML = "<input class=\"edit_text\" type=\"text\"/>" +
                     "<button class=\"save_button\" type=\"button\">Save</button>" +
                     "<button class=\"cancel_button\" type=\"button\">Cancel</button>" +
@@ -36,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.querySelector(".edit_text").value = text;
 
                 listItem.querySelector(".save_button").addEventListener("click", function () {
-
                     if (listItem.querySelector(".edit_text").value.trim() === "") {
                         var editErrorMessage = document.getElementById("edit_error_message");
                         editErrorMessage.textContent = "Please enter the text";
@@ -55,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setViewMode(listItem);
 
-        list.appendChild(listItem);
+        list.prepend(listItem);
 
         textField.value = "";
         errorMessage.textContent = "";
     });
 });
+
