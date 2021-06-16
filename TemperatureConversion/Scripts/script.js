@@ -1,27 +1,21 @@
 ﻿"use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    var celsiusTextfield = document.getElementById("celsius_textfield");
-
+    var celsiusTextField = document.getElementById("celsius_text_field");
     var outputKelvin = document.getElementById("output_kelvin");
     var outputFahrenheit = document.getElementById("output_fahrenheit");
 
     document.getElementById("content_button").addEventListener("click", function () {
-
-        var inputText = celsiusTextfield.value;
-
-        console.log(inputText);
+        var inputText = celsiusTextField.value;
 
         if (inputText === "" || isNaN(inputText)) {
-
             outputKelvin.textContent = "";
             outputFahrenheit.textContent = "";
             alert("Please enter the number!");
             return;
         }
 
-        celsiusTextfield.textContent = "";
+        celsiusTextField.value = "";
 
         function convertToKelvin(value) {
             return parseFloat(value) + 273.15;
