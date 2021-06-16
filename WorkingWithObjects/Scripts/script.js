@@ -72,9 +72,9 @@
         }
     ];
 
-    function getCountriesWithMaxCities(countries) {
-        var maxCitiesCount = countries.reduce(function (sum, currentValue) {
-            return Math.max(sum, currentValue.cities.length);
+    function getCountriesWithMaxCitiesCount(countries) {
+        var maxCitiesCount = countries.reduce(function (max, country) {
+            return Math.max(max, country.cities.length);
         }, 0);
 
         return countries.filter(function (country) {
@@ -83,14 +83,14 @@
     }
 
     console.log("Страны с максимальным количеством городов:");
-    console.log(getCountriesWithMaxCities(countries));
+    console.log(getCountriesWithMaxCitiesCount(countries));
 
     function getCountriesPopulation(countries) {
         var countriesPopulation = {};
 
         countries.forEach(function (country) {
-            countriesPopulation[country.name] = country.cities.reduce(function (sum, currentValue) {
-                return sum + currentValue.population;
+            countriesPopulation[country.name] = country.cities.reduce(function (sum, city) {
+                return sum + city.population;
             }, 0);
         });
 
