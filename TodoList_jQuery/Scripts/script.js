@@ -29,6 +29,10 @@ $(document).ready(function () {
             });
 
             listItem.find(".edit_button").click(function () {
+                if ($(".edit_text").size !== 0) {
+                    $(".cancel_button").click();
+                }
+
                 listItem.html("<input class=\"edit_text\" type=\"text\"/>" +
                     "<button class=\"save_button\" type=\"button\">Save</button>" +
                     "<button class=\"cancel_button\" type=\"button\">Cancel</button>" +
