@@ -1,4 +1,4 @@
-﻿* {
+﻿﻿* {
     box-sizing: border-box;
 }
 
@@ -30,19 +30,20 @@ body {
     width: 50%;
     padding: 5px;
     margin-left: 30px;
+    border-color: #ccc;
 }
 
-.table_content {
+.table {
     width: 100%;
     border-collapse: collapse;
 }
 
-    .table_content td, table_content th {
+    .table td, table th {
         border: 1px solid #ccc;
         padding: 14px 11px;
     }
 
-    .table_content thead tr {
+    .table thead tr {
         background-color: #3498DB;
         color: #EEE;
     }
@@ -62,7 +63,7 @@ body {
     }
 
 .error {
-    color: #ff0000;
+    color: #f00;
     margin-left: 5px;
 }
 
