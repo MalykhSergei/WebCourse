@@ -5,6 +5,8 @@ $(document).ready(function () {
     var lastName = $("#last_name_input_text");
     var phoneNumber = $("#phone_number_input_text");
 
+    var errorMessage = $("#error_message");
+
     var table = $("#table");
 
     $(".form").each(function () {
@@ -12,9 +14,9 @@ $(document).ready(function () {
 
         form.find(".input_text").addClass("empty_field");
 
-        function checkInputs() {
+        function checkInputFields() {
             form.find(".input_text").each(function () {
-                if ($(this).val() !== "") {
+                if ($(this).val().trim() !== "") {
                     $(this).removeClass("empty_field");
                 } else {
                     $(this).addClass("empty_field");
@@ -22,20 +24,20 @@ $(document).ready(function () {
             });
         }
 
-        function lightEmpty() {
-            form.find(".empty_field").css({ "border-color": "#d8512d" });
+        function selectEmptyFields(inputField) {
+            form.find(inputField).css({ "border-color": "#d8512d" });
 
             setTimeout(function () {
-                form.find(".empty_field").removeAttr("style");
+                form.find(inputField).removeAttr("style");
             }, 500);
         }
 
         setInterval(function () {
-            checkInputs();
+            checkInputFields();
 
-            var sizeEmpty = form.find(".empty_field").length;
+            var emptyFieldsCount = form.find(".empty_field").length;
 
-            if (sizeEmpty > 0) {
+            if (emptyFieldsCount > 0) {
                 if ($("#add_button").hasClass("disabled")) {
                     return false;
                 } else {
@@ -47,12 +49,20 @@ $(document).ready(function () {
         }, 500);
 
         $("#add_button").click(function () {
-            var lastNameValue = lastName.val();
-            var firstNameValue = firstName.val();
-            var phoneNumberValue = phoneNumber.val();
+            var lastNameValue = lastName.val().trim();
+            var firstNameValue = firstName.val().trim();
+            var phoneNumberValue = phoneNumber.val().trim();
+            var phoneNumberIntValue = parseInt(phoneNumberValue.toString(), 10);
 
             if ($(this).hasClass("disabled")) {
-                lightEmpty();
+                selectEmptyFields(".empty_field");
+                errorMessage.text("Все поля должны быть заполнены");
+                return false;
+            }
+
+            if (isNaN(phoneNumberIntValue)) {
+                selectEmptyFields(phoneNumber);
+                errorMessage.text("Поле должно содержать только цифры");
                 return false;
             }
 
@@ -65,6 +75,7 @@ $(document).ready(function () {
                 "<td class=\"delete_button\"></td>");
 
             function setViewMode() {
+                listItem.find(".id").text(updateTableId());
                 listItem.find(".last_name").text(lastNameValue);
                 listItem.find(".first_name").text(firstNameValue);
                 listItem.find(".phone_number").text(phoneNumberValue);
@@ -72,6 +83,8 @@ $(document).ready(function () {
 
                 listItem.find(".delete_button").click(function () {
                     listItem.remove();
+                    $(this).closest("td").remove();
+                    updateTableId();
                 });
             }
 
@@ -79,13 +92,24 @@ $(document).ready(function () {
 
             table.append(listItem);
 
+            updateTableId();
+
             clearTextFields();
         });
+
+        function updateTableId() {
+            $("#table tbody tr").each(function (i) {
+                var count = i + 1;
+
+                $(this).find(".id").text(count++);
+            });
+        }
 
         function clearTextFields() {
             firstName.val("");
             lastName.val("");
             phoneNumber.val("");
+            $(".error").text("");
         }
     });
 });

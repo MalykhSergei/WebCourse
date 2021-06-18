@@ -9,39 +9,44 @@
     <script defer src="Scripts/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <form class="form" action="test.php" method="post">
-            <div class="form_input_block">
-                <label class="form_label">Фамилия:</label>
-                <input id="last_name_input_text" class="input_text" type="text" name="last_name" placeholder="Введите фамилию *" />
-            </div>
+<div class="container">
+    <form class="form" action="test.php" method="post">
+        <div class="form_input_block">
+            <label class="form_label">Фамилия:</label>
+            <input id="last_name_input_text" class="input_text" type="text" name="last_name" placeholder="Введите фамилию *" />
+        </div>
 
-            <div class="form_input_block">
-                <label class="form_label">Имя:</label>
-                <input id="first_name_input_text" class="input_text" type="text" name="first_name" placeholder="Введите имя *" />
-            </div>
+        <div class="form_input_block">
+            <label class="form_label">Имя:</label>
+            <input id="first_name_input_text" class="input_text" type="text" name="first_name" placeholder="Введите имя *" />
+        </div>
 
-            <div class="form_input_block">
-                <label class="form_label">Телефон:</label>
-                <input id="phone_number_input_text" class="input_text" type="text" name="phone_number" placeholder="Введите номер телефона *" />
-            </div>
+        <div class="form_input_block">
+            <label class="form_label">Телефон:</label>
+            <input id="phone_number_input_text" class="input_text" type="text" name="phone_number" placeholder="Введите номер телефона *" />
+        </div>
 
-            <div>
+        <div class="form_input_block">
+            <div class="form_label">
                 <button id="add_button" class="button" type="button">Add</button>
             </div>
-        </form>
+            <span id="error_message" class="error"></span>
+        </div>
+    </form>
 
-        <table id="table" class="table">
-            <thead>
-                <tr>
-                    <th class="number_column">№</th>
-                    <th class="last_name_column">Фамилия</th>
-                    <th class="first_name_column">Имя</th>
-                    <th class="phone_number_column">Номер телефона</th>
-                    <th class="button_column"></th>
-                </tr>
-            </thead>
-        </table>
-    </div>
+    <table id="table" class="table">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Номер телефона</th>
+            <th>Удалить контакт</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
