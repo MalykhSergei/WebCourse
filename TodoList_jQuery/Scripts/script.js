@@ -29,10 +29,6 @@ $(document).ready(function () {
             });
 
             listItem.find(".edit_button").click(function () {
-                if ($(".edit_text").size !== 0) {
-                    $(".cancel_button").click();
-                }
-
                 listItem.html("<input class=\"edit_text\" type=\"text\"/>" +
                     "<button class=\"save_button\" type=\"button\">Save</button>" +
                     "<button class=\"cancel_button\" type=\"button\">Cancel</button>" +
@@ -42,8 +38,7 @@ $(document).ready(function () {
 
                 listItem.find(".save_button").click(function () {
                     if (listItem.find(".edit_text").val().trim() === "") {
-                        var editErrorMessage = $("#edit_error_message");
-                        editErrorMessage.text("Please enter the text");
+                        listItem.find("#edit_error_message").text("Please enter the text");
                         return;
                     }
 
