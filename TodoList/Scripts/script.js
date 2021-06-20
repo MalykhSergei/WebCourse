@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.innerHTML = "<input class=\"edit_text\" type=\"text\"/>" +
                     "<button class=\"save_button\" type=\"button\">Save</button>" +
                     "<button class=\"cancel_button\" type=\"button\">Cancel</button>" +
-                    "<div id=\"edit_error_message\" class=\"error\"></div>";
+                    "<div class=\"error\"></div>";
 
                 listItem.querySelector(".edit_text").value = text;
 
                 listItem.querySelector(".save_button").addEventListener("click", function () {
                     if (listItem.querySelector(".edit_text").value.trim() === "") {
-                        listItem.querySelector("#edit_error_message").textContent = "Please enter the text";
+                        listItem.querySelector(".error").textContent = "Please enter the text";
                         return;
                     }
 
@@ -59,5 +59,3 @@ document.addEventListener("DOMContentLoaded", function () {
         errorMessage.textContent = "";
     });
 });
-
-
