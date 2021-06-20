@@ -32,13 +32,13 @@ $(document).ready(function () {
                 listItem.html("<input class=\"edit_text\" type=\"text\"/>" +
                     "<button class=\"save_button\" type=\"button\">Save</button>" +
                     "<button class=\"cancel_button\" type=\"button\">Cancel</button>" +
-                    "<div id=\"edit_error_message\" class=\"error\"></div>");
+                    "<div class=\"error\"></div>");
 
                 listItem.find(".edit_text").val(text);
 
                 listItem.find(".save_button").click(function () {
                     if (listItem.find(".edit_text").val().trim() === "") {
-                        listItem.find("#edit_error_message").text("Please enter the text");
+                        listItem.find(".error").text("Please enter the text");
                         return;
                     }
 
