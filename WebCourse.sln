@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook_jQuery", "Phonebo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderscoreTask", "UnderscoreTask\UnderscoreTask.csproj", "{07039B49-6358-4FAA-AF50-1E519F785627}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList_Vue", "TodoList_Vue\TodoList_Vue.csproj", "{3298172D-6EE6-4971-A45E-1DD149F43664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{07039B49-6358-4FAA-AF50-1E519F785627}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07039B49-6358-4FAA-AF50-1E519F785627}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07039B49-6358-4FAA-AF50-1E519F785627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3298172D-6EE6-4971-A45E-1DD149F43664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3298172D-6EE6-4971-A45E-1DD149F43664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3298172D-6EE6-4971-A45E-1DD149F43664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3298172D-6EE6-4971-A45E-1DD149F43664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

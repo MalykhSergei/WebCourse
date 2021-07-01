@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TodoList_Vue</title>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Styles/style.css" />
+
+    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="node_modules/vue/dist/vue.min.js"></script>
+    <script defer src="Scripts/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div v-cloak id="app">
+            <todo-list></todo-list>
+        </div>
+    </div>
+
+    <script id="todo-list-template" type="text/x-template">
+        <div>
+            <h1>Todo list</h1>
+
+            <div>
+                <input v-model="newTodoText" type="text" />
+            </div>
+            <div>
+                <button @click="addNewTodoItem" type="button">Add</button>
+            </div>
+
+            <ul>
+                <todo-list-item v-for="item in items"
+                                @delete-item="deleteItem"
+                                @save-item="saveItem"
+                                :item="item"
+                                :key="item.id"></todo-list-item>
+            </ul>
+        </div>
+    </script>
+
+    <script id="todo-list-item-template" type="text/x-template">
+        <li>
+            <template v-if="isEditing">
+                <input v-model="editText" type="text" />
+                <button @click="saveItem" type="button">Save</button>
+                <button @click="stopEditItem" type="button">Cancel</button>
+            </template>
+
+            <template v-else>
+                <span>{{item.text}}</span>
+                <button @click="startEditItem" class="mt-2" type="button">Edit</button>
+                <button @click="deleteItem" type="button">Delete</button>
+            </template>
+        </li>
+    </script>
+</body>
+</html>
