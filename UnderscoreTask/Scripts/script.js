@@ -56,23 +56,21 @@
 
     function getAverageAge(actors) {
         var sum = _.chain(actors)
-            .pluck("age")
             .reduce(function (sum, currentAge) {
-                return sum + currentAge;
+                return sum + currentAge.age;
             }, 0)
             .value();
 
-        return sum / _.size(actors);
+        return sum / actors.length;
     }
 
     function getPeopleAgeFrom20To30(actors) {
-        var sortedList = _.chain(actors)
+        return _.chain(actors)
             .filter(function (person) {
                 return person.age >= 20 && person.age <= 30;
             })
+            .sortBy("age")
             .value();
-
-        return _.sortBy(sortedList, "age");
     }
 
     function addFullName(actors) {
@@ -88,6 +86,5 @@
     console.log(getPeopleAgeFrom20To30(actors));
 
     console.log("Добавить поле fullName: ");
-
     console.log(addFullName(actors));
 })();
