@@ -25,11 +25,16 @@
         <div>
             <h1>Todo list</h1>
 
-            <div>
-                <input v-model="newTodoText" type="text" />
-            </div>
-            <div>
-                <button @click="addNewTodoItem" type="button">Add</button>
+            <div class="row no-gutters">
+                <div class="col pr-2">
+                    <input v-model="newTodoText" class="form-control mb-2" type="text" />
+                </div>
+                <div class="col-auto">
+                    <button @click="addNewTodoItem" class="btn btn-primary" type="button">Add</button>
+                </div>
+                <div>
+                    <div class="mb-2 text-danger" v-if="newItemError">{{ newItemError }}</div>
+                </div>
             </div>
 
             <ul>
@@ -43,19 +48,19 @@
     </script>
 
     <script id="todo-list-item-template" type="text/x-template">
-        <li>
+        <li class="p-2">
             <template v-if="isEditing">
                 <input v-model="editText" type="text" />
-                <button @click="saveItem" type="button">Save</button>
-                <button @click="stopEditItem" type="button">Cancel</button>
+                <button @click="saveItem" class="btn btn-primary" type="button">Save</button>
+                <button @click="cancelEditItem" class="btn btn-danger" type="button">Cancel</button>
+                <div class="mb-2 text-danger" v-if="itemError">{{itemError}}</div>
             </template>
 
             <template v-else>
-                <span>{{item.text}}</span>
-                <button @click="startEditItem" class="mt-2" type="button">Edit</button>
-                <button @click="deleteItem" type="button">Delete</button>
+                <span>{{ item.text }}</span>
+                <button @click="startEditItem" class="btn btn-primary" type="button">Edit</button>
+                <button @click="deleteItem" class="btn btn-danger" type="button">Delete</button>
             </template>
         </li>
     </script>
 </body>
-</html>
