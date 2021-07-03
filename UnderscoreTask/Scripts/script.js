@@ -55,11 +55,9 @@
     ];
 
     function getAverageAge(actors) {
-        var sum = _.chain(actors)
-            .reduce(function (sum, currentAge) {
-                return sum + currentAge.age;
-            }, 0)
-            .value();
+        var sum = _.reduce(actors, function (sum, currentAge) {
+            return sum + currentAge.age;
+        }, 0);
 
         return sum / actors.length;
     }
