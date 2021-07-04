@@ -39,12 +39,12 @@ $(document).ready(function () {
 
         table.append(listItem);
 
-        updateTableId();
+        updateRowNumber();
 
         clearTextFields();
 
         function setViewMode() {
-            listItem.html("<td class=\"id\"></td>" +
+            listItem.html("<td class=\"row_number\"></td>" +
                 "<td class=\"last_name\"></td>" +
                 "<td class=\"first_name\"></td>" +
                 "<td class=\"phone_number\"></td>" +
@@ -53,20 +53,20 @@ $(document).ready(function () {
             listItem.find(".last_name").text(lastNameValue);
             listItem.find(".first_name").text(firstNameValue);
             listItem.find(".phone_number").text(phoneNumberValue);
-            listItem.find(".delete_button").html("<button class=\"delete_button\" type=\"button\">Delete</button");
+            listItem.find(".delete_button").html("<button class=\"button\" id=\"delete_button\" type=\"button\">Удалить</button");
 
             listItem.find(".delete_button").click(function () {
                 listItem.remove();
-                updateTableId();
+                updateRowNumber();
             });
         }
     });
 
-    function updateTableId() {
+    function updateRowNumber() {
         table.find("tbody tr").each(function (i) {
-            var count = i + 1;
+            var rowNumber = i + 1;
 
-            $(this).find(".id").text(count);
+            $(this).find(".row_number").text(rowNumber);
         });
     }
 

@@ -1,6 +1,6 @@
 ﻿﻿﻿* {
-      box-sizing: border-box;
-  }
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -38,7 +38,7 @@ body {
     text-align: left;
 }
 
-.id, .delete_button {
+.row_number, .delete_button {
     text-align: center;
 }
 
@@ -64,9 +64,13 @@ body {
     cursor: pointer;
 }
 
-.button:hover {
-    background-color: #32728D;
-}
+    .button#delete_button {
+        margin: 0;
+    }
+
+    .button:hover {
+        background-color: #32728D;
+    }
 
 .error {
     color: #f00;
