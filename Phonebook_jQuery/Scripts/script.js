@@ -39,34 +39,34 @@ $(document).ready(function () {
 
         table.append(listItem);
 
-        updateRowNumber();
+        updateRowNumbers();
 
         clearTextFields();
 
         function setViewMode() {
-            listItem.html("<td class=\"row_number\"></td>" +
-                "<td class=\"last_name\"></td>" +
-                "<td class=\"first_name\"></td>" +
-                "<td class=\"phone_number\"></td>" +
-                "<td class=\"delete_button\"></td>");
+            listItem.html("<td class=\"row_number_column\"></td>" +
+                "<td class=\"last_name_column\"></td>" +
+                "<td class=\"first_name_column\"></td>" +
+                "<td class=\"phone_number_column\"></td>" +
+                "<td class=\"delete_contact_column\"></td>");
 
-            listItem.find(".last_name").text(lastNameValue);
-            listItem.find(".first_name").text(firstNameValue);
-            listItem.find(".phone_number").text(phoneNumberValue);
-            listItem.find(".delete_button").html("<button class=\"button\" id=\"delete_button\" type=\"button\">Удалить</button");
+            listItem.find(".last_name_column").text(lastNameValue);
+            listItem.find(".first_name_column").text(firstNameValue);
+            listItem.find(".phone_number_column").text(phoneNumberValue);
+            listItem.find(".delete_contact_column").html("<button class=\"delete_button\" type=\"button\">Удалить</button");
 
-            listItem.find(".delete_button").click(function () {
+            listItem.find(".delete_contact_column").click(function () {
                 listItem.remove();
-                updateRowNumber();
+                updateRowNumbers();
             });
         }
     });
 
-    function updateRowNumber() {
+    function updateRowNumbers() {
         table.find("tbody tr").each(function (i) {
             var rowNumber = i + 1;
 
-            $(this).find(".row_number").text(rowNumber);
+            $(this).find(".row_number_column").text(rowNumber);
         });
     }
 
