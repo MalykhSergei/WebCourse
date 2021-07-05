@@ -11,7 +11,7 @@
             isEditing: false,
             editText: "",
             itemError: ""
-        }
+        };
     },
 
     template: "#todo-list-item-template",
@@ -46,49 +46,48 @@
     }
 });
 
-Vue.component("todo-list",
-    {
-        data: function () {
-            return {
-                items: [],
-                newTodoText: "",
-                newItemError: "",
-                newId: 1
+Vue.component("todo-list", {
+    data: function () {
+        return {
+            items: [],
+            newTodoText: "",
+            newItemError: "",
+            newId: 1
+        };
+    },
+
+    template: "#todo-list-template",
+
+    methods: {
+        addNewTodoItem: function () {
+            var text = this.newTodoText;
+
+            if (text.trim().length === 0) {
+                this.newItemError = "Please enter the text";
+                return;
             }
+
+            this.items.push({
+                id: this.newId,
+                text: text
+            });
+
+            this.newItemError = "";
+            this.newTodoText = "";
+            this.newId++;
         },
 
-        template: "#todo-list-template",
+        deleteItem: function (item) {
+            this.items = this.items.filter(function (x) {
+                return x !== item;
+            });
+        },
 
-        methods: {
-            addNewTodoItem: function () {
-                var text = this.newTodoText;
-
-                if (text.trim().length === 0) {
-                    this.newItemError = "Please enter the text";
-                    return;
-                }
-
-                this.items.push({
-                    id: this.newId,
-                    text: text
-                });
-
-                this.newItemError = "";
-                this.newTodoText = "";
-                this.newId++;
-            },
-
-            deleteItem: function (item) {
-                this.items = this.items.filter(function (x) {
-                    return x !== item;
-                });
-            },
-
-            saveItem: function (item, newText) {
-                item.text = newText;
-            }
+        saveItem: function (item, newText) {
+            item.text = newText;
         }
-    });
+    }
+});
 
 new Vue({
     el: "#app"

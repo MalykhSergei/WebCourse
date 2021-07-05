@@ -7,9 +7,8 @@
     <title>TodoList_Vue</title>
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="Styles/style.css" />
+    <link href="Styles/style.css" rel="stylesheet" />
 
-    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
     <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="node_modules/vue/dist/vue.min.js"></script>
     <script defer src="Scripts/script.js"></script>
@@ -25,15 +24,14 @@
         <div>
             <h1>Todo list</h1>
 
-            <div class="row no-gutters">
-                <div class="col pr-2">
-                    <input v-model="newTodoText" class="form-control mb-2" type="text" />
-                </div>
-                <div class="col-auto">
+            <div class="row g-2">
+                <div class="input-group mb-3">
+                    <input v-model="newTodoText" class="form-control" type="text" />
                     <button @click="addNewTodoItem" class="btn btn-primary" type="button">Add</button>
                 </div>
+
                 <div>
-                    <div class="mb-2 text-danger" v-if="newItemError">{{ newItemError }}</div>
+                    <div class="text-danger" v-if="newItemError">{{ newItemError }}</div>
                 </div>
             </div>
 
@@ -53,7 +51,7 @@
                 <input v-model="editText" type="text" />
                 <button @click="saveItem" class="btn btn-primary" type="button">Save</button>
                 <button @click="cancelEditItem" class="btn btn-danger" type="button">Cancel</button>
-                <div class="mb-2 text-danger" v-if="itemError">{{itemError}}</div>
+                <div class="text-danger" v-if="itemError">{{ itemError }}</div>
             </template>
 
             <template v-else>
