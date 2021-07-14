@@ -38,8 +38,7 @@
 
             if (!this.select_all) {
                 for (var item of this.contacts) {
-                    this.selected.push(item.id)
-                    item.isChecked = true;
+                    this.selected.push(item.id);
                 }
             }
         },
@@ -55,7 +54,6 @@
                     contact.errorMessage = "Заполните поле";
                 } else {
                     contact.isInvalid = false;
-                    contact.errorMessage = "";
                 }
             });
 

@@ -19,13 +19,14 @@
             <h1 class="mb-3">Контакты</h1>
 
             <form class="row g-2">
-                <div class="col-auto" v-for="contact in contactsData"
+                <div class="col-auto"
+                     v-for="contact in contactsData"
                      :key="contactId">
-                    <input v-model="contact.text" :class="{empty_field: contact.isInvalid}" type="text"
+                    <input v-model="contact.text"
+                           :class="{'is-invalid': contact.isInvalid}"
+                           type="text"
                            class="form-control">
-                    <div>
-                        <div class="text-danger">{{ contact.errorMessage }}</div>
-                    </div>
+                    <div class="invalid-feedback">{{ contact.errorMessage }}</div>
                 </div>
 
                 <div class="col-auto">
@@ -43,7 +44,9 @@
                 <thead>
                     <tr>
                         <th scope="col">
-                            <input type="checkbox" v-model="select_all" @click="select">
+                            <input type="checkbox"
+                                   v-model="select_all"
+                                   @click="select">
                         </th>
                         <th scope="col">№</th>
                         <th scope="col">Фамилия</th>
@@ -54,9 +57,12 @@
                 </thead>
                 <tbody>
 
-                    <tr v-for="(contact, index) in contacts" :key="contact.id">
+                    <tr v-for="(contact, index) in contacts"
+                        :key="contact.id">
                         <td>
-                            <input type="checkbox" :value="contact.id" v-model="selected">
+                            <input type="checkbox"
+                                   :value="contact.id"
+                                   v-model="selected">
                         </td>
                         <td>{{ index + 1 }}</td>
                         <td>{{ contact.lastName }}</td>
