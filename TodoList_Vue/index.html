@@ -14,24 +14,27 @@
     <script defer src="Scripts/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div v-cloak id="app">
+    <div v-cloak id="app">
+        <div class="container">
             <todo-list></todo-list>
         </div>
     </div>
 
     <script id="todo-list-template" type="text/x-template">
-        <div>
+        <div class="py-3">
             <h1>Todo list</h1>
 
             <div class="row g-2">
-                <div class="input-group mb-3">
-                    <input v-model="newTodoText" class="form-control" type="text" />
-                    <button @click="addNewTodoItem" class="btn btn-primary" type="button">Add</button>
+                <div class="col-auto">
+                    <input v-model="newTodoText"
+                           class="form-control"
+                           :class="{'is-invalid': isInvalidInput}"
+                           type="text" />
+                    <div class="invalid-feedback">Please enter the text</div>
                 </div>
 
-                <div>
-                    <div class="text-danger" v-if="newItemError">{{ newItemError }}</div>
+                <div class="col-auto">
+                    <button @click="addNewTodoItem" class="btn btn-primary" type="button">Add</button>
                 </div>
             </div>
 
@@ -48,10 +51,23 @@
     <script id="todo-list-item-template" type="text/x-template">
         <li class="p-2">
             <template v-if="isEditing">
-                <input v-model="editText" type="text" />
-                <button @click="saveItem" class="btn btn-primary" type="button">Save</button>
-                <button @click="cancelEditItem" class="btn btn-danger" type="button">Cancel</button>
-                <div class="text-danger" v-if="itemError">{{ itemError }}</div>
+                <div class="row g-2">
+                    <div class="col-2">
+                        <input v-model="editText"
+                               class="form-control"
+                               :class="{'is-invalid': isInvalid}"
+                               type="text" />
+                        <div class="invalid-feedback">Please enter the text</div>
+                    </div>
+
+                    <div class="col-auto">
+                        <button @click="saveItem" class="btn btn-primary" type="button">Save</button>
+                    </div>
+
+                    <div class="col-auto">
+                        <button @click="cancelEditItem" class="btn btn-danger" type="button">Cancel</button>
+                    </div>
+                </div>
             </template>
 
             <template v-else>
