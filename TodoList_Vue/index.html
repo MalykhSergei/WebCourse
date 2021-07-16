@@ -20,12 +20,12 @@
         </div>
     </div>
 
-    <script id="todo-list-template" type="text/x-template">
+<script id="todo-list-template" type="text/x-template">
         <div class="py-3">
             <h1>Todo list</h1>
 
             <div class="row g-2">
-                <div class="col-auto">
+                <div class="col-8 mb-3">
                     <input v-model="newTodoText"
                            class="form-control"
                            :class="{'is-invalid': isInvalidInput}"
