@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,14 +19,15 @@
             <h1 class="mb-3">Контакты</h1>
 
             <form class="row g-2">
-                <div class="col-auto"
-                     v-for="contact in contactsData"
-                     :key="contactId">
-                    <input v-model="contact.text"
-                           :class="{'is-invalid': contact.isInvalid}"
+                <div class="col-md-3 mb-2"
+                     v-for="contactDataInputField in contactsData"
+                     :key="contactDataInputField.id">
+                    <input v-model="contactDataInputField.text"
+                           :class="{'is-invalid': contactDataInputField.isInvalid}"
                            type="text"
+                           :placeholder="contactDataInputField.name"
                            class="form-control">
-                    <div class="invalid-feedback">{{ contact.errorMessage }}</div>
+                    <div class="invalid-feedback">{{ contactDataInputField.errorMessage }}</div>
                 </div>
 
                 <div class="col-auto">
@@ -40,41 +41,41 @@
                 </div>
             </form>
 
-            <table class="table table-striped text-center align-middle mt-3">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <input type="checkbox"
-                                   v-model="select_all"
-                                   @click="select">
-                        </th>
-                        <th scope="col">№</th>
-                        <th scope="col">Фамилия</th>
-                        <th scope="col">Имя</th>
-                        <th scope="col">Номер телефона</th>
-                        <th scope="col">Удалить контакт</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr v-for="(contact, index) in contacts"
-                        :key="contact.id">
-                        <td>
-                            <input type="checkbox"
-                                   :value="contact.id"
-                                   v-model="selected">
-                        </td>
-                        <td>{{ index + 1 }}</td>
-                        <td>{{ contact.lastName }}</td>
-                        <td>{{ contact.firstName }}</td>
-                        <td>{{ contact.phoneNumber }}</td>
-                        <td>
-                            <button @click="deleteContact(contact)" type="button" class="btn btn-primary">Удалить</button>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-striped text-center align-middle mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <input type="checkbox"
+                                       v-model="selectAll"
+                                       @click="select">
+                            </th>
+                            <th scope="col">№</th>
+                            <th scope="col">Фамилия</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Номер телефона</th>
+                            <th scope="col">Удалить контакт</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(contact, index) in contacts"
+                            :key="contact.id">
+                            <td>
+                                <input type="checkbox"
+                                       :value="contact.id"
+                                       v-model="selected">
+                            </td>
+                            <td>{{ index + 1 }}</td>
+                            <td>{{ contact.lastName }}</td>
+                            <td>{{ contact.firstName }}</td>
+                            <td>{{ contact.phoneNumber }}</td>
+                            <td>
+                                <button @click="deleteContact(contact)" type="button" class="btn btn-primary">Удалить</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>

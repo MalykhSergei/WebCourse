@@ -25,8 +25,9 @@
             }
         ],
 
-        select_all: false,
+        selectAll: false,
         selected: [],
+        search: "",
 
         contacts: [],
         contactId: 1
@@ -36,10 +37,12 @@
         select: function () {
             this.selected = [];
 
-            if (!this.select_all) {
-                for (var item of this.contacts) {
-                    this.selected.push(item.id);
-                }
+            if (!this.selectAll) {
+                var self = this;
+
+                this.contacts.forEach(function (contact) {
+                    self.selected.push(contact.id);
+                });
             }
         },
 
@@ -73,7 +76,7 @@
                 return contact.phoneNumber === self.contactsData[2].text;
             })) {
                 self.contactsData[2].isInvalid = true;
-                self.contactsData[2].errorMessage = "Номер уже существует"
+                self.contactsData[2].errorMessage = "Номер уже существует";
                 return;
             }
 
@@ -99,11 +102,15 @@
         },
 
         deleteItems: function () {
-            for (var i = 0; i < this.selected.length; i++) { //let
-                this.contacts.splice(this.contacts.findIndex(contact => contact.id === this.selected[i]), 1);
-            }
+            var self = this;
 
-            this.select_all = false;
+            this.selected.forEach(function (selectedItem) {
+                self.contacts.splice(self.contacts.findIndex(function (contact) {
+                    return contact.id === selectedItem;
+                }), 1);
+            });
+
+            this.selectAll = false;
             this.selected = [];
         }
     }
