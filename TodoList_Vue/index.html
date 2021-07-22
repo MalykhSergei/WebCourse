@@ -20,7 +20,7 @@
         </div>
     </div>
 
-<script id="todo-list-template" type="text/x-template">
+    <script id="todo-list-template" type="text/x-template">
         <div class="py-3">
             <h1>Todo list</h1>
 
@@ -52,7 +52,7 @@
         <li class="p-2">
             <template v-if="isEditing">
                 <div class="row g-2">
-                    <div class="col-2">
+                    <div class="col-md-3">
                         <input v-model="editText"
                                class="form-control"
                                :class="{'is-invalid': isInvalid}"
