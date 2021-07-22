@@ -27,7 +27,6 @@
 
         selectAll: false,
         selected: [],
-        search: "",
 
         contacts: [],
         contactId: 1
