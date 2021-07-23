@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList_Vue", "TodoList_Vu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook_Vue", "Phonebook_Vue\Phonebook_Vue.csproj", "{056E5781-2CA1-4D6F-8C51-5337B533FBC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook_Server", "Phonebook_Server\Phonebook_Server.csproj", "{AE25E252-A934-46BE-B766-31E825CD9C77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{056E5781-2CA1-4D6F-8C51-5337B533FBC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{056E5781-2CA1-4D6F-8C51-5337B533FBC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{056E5781-2CA1-4D6F-8C51-5337B533FBC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE25E252-A934-46BE-B766-31E825CD9C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE25E252-A934-46BE-B766-31E825CD9C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE25E252-A934-46BE-B766-31E825CD9C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE25E252-A934-46BE-B766-31E825CD9C77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
