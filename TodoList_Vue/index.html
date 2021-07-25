@@ -25,7 +25,7 @@
             <h1>Todo list</h1>
 
             <div class="row g-2">
-                <div class="col-8 mb-3">
+                <div class="col-md-8 mb-2">
                     <input v-model="newTodoText"
                            class="form-control"
                            :class="{'is-invalid': isInvalidInput}"
@@ -49,10 +49,10 @@
     </script>
 
     <script id="todo-list-item-template" type="text/x-template">
-        <li class="p-2">
+        <li class="py-2 mt-2">
             <template v-if="isEditing">
                 <div class="row g-2">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-2">
                         <input v-model="editText"
                                class="form-control"
                                :class="{'is-invalid': isInvalid}"
