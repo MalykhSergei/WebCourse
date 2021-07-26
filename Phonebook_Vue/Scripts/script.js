@@ -104,9 +104,13 @@
             var self = this;
 
             this.selected.forEach(function (selectedItem) {
-                self.contacts.splice(self.contacts.findIndex(function (contact) {
+                var selectedItems = self.contacts.filter(function (contact) {
                     return contact.id === selectedItem;
-                }), 1);
+                });
+
+                selectedItems.forEach(function (selectedContact) {
+                    self.deleteContact(selectedContact);
+                });
             });
 
             this.selectAll = false;
