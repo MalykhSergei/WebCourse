@@ -820,7 +820,7 @@
     <Content Include="node_modules\wrappy\wrappy.js" />
     <Content Include="node_modules\write-file-atomic\index.js" />
     <Content Include="node_modules\xdg-basedir\index.js" />
-    <Content Include="public\javascripts\phonebook.js" />
+    <Content Include="public\javascripts\phoneBook.js" />
     <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-grid.css" />
     <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-grid.min.css" />
     <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-grid.rtl.css" />

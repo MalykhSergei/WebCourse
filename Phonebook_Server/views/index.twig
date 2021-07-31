@@ -9,19 +9,18 @@
         <div class="col-md-3 mb-2"
             v-for="contactDataInputField in contactsData" :key="contactDataInputField.id">
             <input v-model="contactDataInputField.text"
-            :class="{'is-invalid': contactDataInputField.isInvalid}"
-            type="text"
-            :placeholder="contactDataInputField.name"
-            class="form-control">
+                :class="{'is-invalid': contactDataInputField.isInvalid}"
+                type="text"
+                :placeholder="contactDataInputField.name"
+                class="form-control">
             <div class="invalid-feedback py-2">{{ contactDataInputField.errorMessage }}</div>
         </div>
-
-            <div class="col-auto">
-                <button @click="addContact" type="button" class="form-control btn btn-primary">Добавить</button>
-            </div>
-            <div class="col-auto">
-                <button @click="deleteItems" type="button" class="form-control btn btn-secondary">Удалить отмеченное</button>
-            </div>
+        <div class="col-auto">
+            <button @click="addContact" type="button" class="form-control btn btn-primary">Добавить</button>
+        </div>
+        <div class="col-auto">
+            <button @click="deleteItems" type="button" class="form-control btn btn-secondary">Удалить отмеченное</button>
+        </div>
     </form>
 
     <div class="row g-2 py-3">
@@ -38,39 +37,38 @@
 
     <div class="table-responsive">
         <table class="table table-striped text-center align-middle mt-3">
-                <thead>
-                    <tr>
-                        <th scope="col">
-                            <input type="checkbox"
-                                   v-model="selectAll"
-                                   @click="select">
-                        </th>
-                        <th scope="col">№</th>
-                        <th scope="col">Фамилия</th>
-                        <th scope="col">Имя</th>
-                        <th scope="col">Номер телефона</th>
-                        <th scope="col">Удалить контакт</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(contact, index) in contacts" :key="contact.id">
-                        <td>
+            <thead>
+                <tr>
+                    <th scope="col">
                         <input type="checkbox"
-                               :value="contact.id"
-                               v-model="selected">
-                        </td>
-                        <td>{{index + 1}}</td>
-                        <td>{{contact.lastName}}</td>
-                        <td>{{contact.firstName}}</td>
-                        <td>{{contact.phoneNumber}}</td>
-                        <td>
-                            <button @click="deleteContact(contact)" type="button" class="btn btn-primary">Удалить</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                            v-model="selectAll"
+                            @click="select">
+                    </th>
+                    <th scope="col">№</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Номер телефона</th>
+                    <th scope="col">Удалить контакт</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(contact, index) in contacts" :key="contact.id">
+                    <td>
+                        <input type="checkbox"
+                            :value="contact.id"
+                            v-model="selected">
+                    </td>
+                    <td>{{index + 1}}</td>
+                    <td>{{contact.lastName}}</td>
+                    <td>{{contact.firstName}}</td>
+                    <td>{{contact.phoneNumber}}</td>
+                    <td>
+                        <button @click="deleteContact(contact)" type="button" class="btn btn-primary">Удалить</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
 </div>
     {% endverbatim %}
 {% endblock %}

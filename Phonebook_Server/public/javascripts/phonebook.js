@@ -93,7 +93,7 @@ new Vue({
 
             if (isNaN(this.contactsData[2].text)) {
                 this.contactsData[2].isInvalid = true;
-                this.contactsData[2].errorMessage = "Введите номер телефона";
+                this.contactsData[2].errorMessage = "Поле должно содержать только цифры";
                 return;
             }
 
@@ -147,8 +147,14 @@ new Vue({
         },
 
         deleteItems: function () {
-            this.selected.forEach(function (selectedItem) {
-                post("/api/deleteContact", {id: selectedItem}).done(function (response) {
+            var self = this;
+
+            var duplicateItems = this.contacts.filter(function (contact) {
+                return self.selected.indexOf(contact.id) !== -1;
+            });
+
+            duplicateItems.forEach(function (selectedItem) {
+                post("/api/deleteContact", selectedItem).done(function (response) {
                     if (!response.success) {
                         alert(response.message);
                     }
