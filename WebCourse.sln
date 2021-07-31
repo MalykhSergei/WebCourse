@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook_Vue", "Phonebook_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook_Server", "Phonebook_Server\Phonebook_Server.csproj", "{AE25E252-A934-46BE-B766-31E825CD9C77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook_Webpack", "PhoneBook_Webpack\PhoneBook_Webpack.csproj", "{398FFD67-3C81-4159-992C-C3B874DCFDE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{AE25E252-A934-46BE-B766-31E825CD9C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE25E252-A934-46BE-B766-31E825CD9C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE25E252-A934-46BE-B766-31E825CD9C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398FFD67-3C81-4159-992C-C3B874DCFDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398FFD67-3C81-4159-992C-C3B874DCFDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398FFD67-3C81-4159-992C-C3B874DCFDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398FFD67-3C81-4159-992C-C3B874DCFDE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
