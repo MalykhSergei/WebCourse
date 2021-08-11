@@ -41,8 +41,7 @@ new Vue({
         selected: [],
 
         contacts: [],
-        term: "",
-        contactId: ""
+        term: ""
     },
 
     created() {
@@ -56,8 +55,8 @@ new Vue({
             if (!this.selectAll) {
                 var self = this;
 
-                this.contacts.forEach(function (contact) {
-                    self.selected.push(contact.id);
+                this.contacts.map(function (contact) {
+                    return self.selected.push(contact.id);
                 });
             }
         },
@@ -103,7 +102,7 @@ new Vue({
 
             var request = {
                 contact: {
-                    id: this.contactId,
+                    id: null,
                     lastName: this.contactsData[0].text,
                     firstName: this.contactsData[1].text,
                     phoneNumber: this.contactsData[2].text
@@ -133,10 +132,9 @@ new Vue({
         deleteContact: function (contact) {
             var self = this;
 
-            post("/api/deleteContact", {id: contact.id}).done(function (response) {
+            post("/api/deleteContact", {id: [contact.id]}).done(function (response) {
                 if (!response.success) {
                     alert(response.message);
-
                     return;
                 }
 
@@ -149,23 +147,25 @@ new Vue({
         deleteItems: function () {
             var self = this;
 
-            var duplicateItems = this.contacts.filter(function (contact) {
+            this.contacts = this.contacts.filter(function (contact) {
                 return self.selected.indexOf(contact.id) !== -1;
+            }).map(function (filteredContacts) {
+                return filteredContacts.id;
             });
 
-            duplicateItems.forEach(function (selectedItem) {
-                post("/api/deleteContact", selectedItem).done(function (response) {
-                    if (!response.success) {
-                        alert(response.message);
-                    }
-                }).fail(function () {
-                    alert("Не удалось удалить контакты");
-                });
+            post("/api/deleteContact", {id: this.contacts}).done(function (response) {
+                if (!response.success) {
+                    alert(response.message);
+                    return;
+                }
+
+                self.loadContacts();
+            }).fail(function () {
+                alert("Не удалось удалить контакты");
             });
 
             this.selectAll = false;
             this.selected = [];
-            this.loadContacts();
         }
     }
 });

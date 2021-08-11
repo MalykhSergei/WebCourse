@@ -2490,9 +2490,7 @@
     <TypeScriptCompile Include="public\node_modules\vue\types\vnode.d.ts" />
     <TypeScriptCompile Include="public\node_modules\vue\types\vue.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="public\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

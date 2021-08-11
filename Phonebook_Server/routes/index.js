@@ -20,8 +20,10 @@ router.get("/api/getContacts", function (req, res) {
 router.post("/api/deleteContact", function (req, res) {
     var id = req.body.id;
 
-    contacts = contacts.filter(function (contact) {
-        return contact.id !== id;
+    id.forEach(function (contactId) {
+        contacts = contacts.filter(function (contact) {
+            return contact.id !== contactId;
+        });
     });
 
     res.send({
@@ -48,7 +50,7 @@ router.post("/api/createContact", function (req, res) {
             message: "Введите фамилию контакта"
         });
 
-       return;
+        return;
     }
 
     if (!contact.firstName) {
