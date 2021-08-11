@@ -149,8 +149,8 @@ new Vue({
 
             this.contacts = this.contacts.filter(function (contact) {
                 return self.selected.indexOf(contact.id) !== -1;
-            }).map(function (filteredContacts) {
-                return filteredContacts.id;
+            }).map(function (selectedContact) {
+                return selectedContact.id;
             });
 
             post("/api/deleteContact", {id: this.contacts}).done(function (response) {
