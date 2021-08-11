@@ -107,8 +107,7 @@ export default {
       selected: [],
 
       contacts: [],
-      term: "",
-      contactId: ""
+      term: ""
     };
   },
 
@@ -121,10 +120,16 @@ export default {
       this.selected = [];
 
       if (!this.selectAll) {
-        this.contacts.forEach(contact => {
+        this.contacts.map(contact => {
           this.selected.push(contact.id);
         });
       }
+
+      /*if (!this.selectAll) {
+        this.contacts.forEach(contact => {
+          this.selected.push(contact.id);
+        });
+      }*/
     },
 
     loadContacts() {
@@ -165,7 +170,7 @@ export default {
       }
 
       const contact = {
-        id: this.contactId,
+        id: null,
         lastName: this.contactsData[0].text,
         firstName: this.contactsData[1].text,
         phoneNumber: this.contactsData[2].text
@@ -190,7 +195,7 @@ export default {
     },
 
     deleteContact(contact) {
-      this.service.deleteContact(contact.id).done(response => {
+      this.service.deleteContact([contact.id]).done(response => {
         if (!response.success) {
           alert(response.message);
           return;
@@ -203,21 +208,22 @@ export default {
     },
 
     deleteItems() {
-      let duplicateItems = this.contacts.filter(contact => this.selected.includes(contact.id));
+      this.contacts = this.contacts.filter(contact => this.selected.includes(contact.id))
+          .map(selectedContact => selectedContact.id);
 
-      duplicateItems.forEach(selectedItem => {
-        this.service.deleteContact(selectedItem.id).done(response => {
-          if (!response.success) {
-            alert(response.message);
-          }
-        }).fail(() => {
-          alert("Не удалось удалить контакты");
-        });
+      this.service.deleteContact(this.contacts).done(response => {
+        if (!response.success) {
+          alert(response.message);
+          return;
+        }
+
+        this.loadContacts();
+      }).fail(() => {
+        alert("Не удалось удалить контакты");
       });
 
       this.selectAll = false;
       this.selected = [];
-      this.loadContacts();
     }
   }
 };

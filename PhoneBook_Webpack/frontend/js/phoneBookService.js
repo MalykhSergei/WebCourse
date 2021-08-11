@@ -14,11 +14,11 @@ export default class PhoneBookService {
     }
 
     getContacts(term) {
-        return this.get("/api/getContacts", {term: term});
+        return this.get("/api/getContacts", {term});
     }
 
     addContact(contact) {
-        return this.post("/api/createContact", {contact: contact});
+        return this.post("/api/createContact", {contact});
     }
 
     deleteContact(id) {
