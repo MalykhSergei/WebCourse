@@ -17,14 +17,15 @@ router.get("/api/getContacts", function (req, res) {
     res.send(result);
 });
 
-router.post("/api/deleteContact", function (req, res) {
+router.post("/api/deleteContacts", function (req, res) {
     var id = req.body.id;
 
-    id.forEach(function (contactId) {
-        contacts = contacts.filter(function (contact) {
-            return contact.id !== contactId;
-        });
-    });
+
+     id.forEach(function (contactId) {
+         contacts = contacts.filter(function (contact) {
+             return contact.id !== contactId;
+         });
+     });
 
     res.send({
         success: true,

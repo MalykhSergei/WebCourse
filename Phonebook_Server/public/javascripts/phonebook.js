@@ -132,7 +132,7 @@ new Vue({
         deleteContact: function (contact) {
             var self = this;
 
-            post("/api/deleteContact", {id: [contact.id]}).done(function (response) {
+            post("/api/deleteContacts", {id: [contact.id]}).done(function (response) {
                 if (!response.success) {
                     alert(response.message);
                     return;
@@ -153,7 +153,7 @@ new Vue({
                 return selectedContact.id;
             });
 
-            post("/api/deleteContact", {id: this.contacts}).done(function (response) {
+            post("/api/deleteContacts", {id: this.contacts}).done(function (response) {
                 if (!response.success) {
                     alert(response.message);
                     return;
